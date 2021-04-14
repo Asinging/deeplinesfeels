@@ -20,12 +20,12 @@ class MainPage extends StatelessWidget {
 
         if (constraints.maxWidth <= 800) {
           return Center(
-            child: Text('küçük'),
+            child: Text('Mobile User welcome'),
           );
         } else if (constraints.maxWidth <= 1280 &&
             constraints.maxWidth >= 800) {
           return Center(
-            child: Text('ddede'),
+            child: Text('welcome'),
           );
         } else if (constraints.maxWidth >= 1280) {
           return Material(
@@ -45,13 +45,13 @@ class MainPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
                       SizedBox(
-                        height: 55,
+                        height: 100,
                         width: _media.width,
                         child: AppBar(
-                          elevation: 4,
+                          elevation: 10,
                           centerTitle: true,
                           title: Text(
-                            'Flutter Dashboard Web',
+                            'Deeplines Feels',
                           ),
                           backgroundColor: drawerBgColor,
                         ),
@@ -75,17 +75,11 @@ class MainPage extends StatelessWidget {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.stretch,
                                           children: <Widget>[
-                                            CardTile(
-                                              iconBgColor: Colors.orange,
-                                              cardTitle: 'Booking',
-                                              icon: Icons.flight_takeoff,
-                                              subText: 'Todays',
-                                              mainText: '230',
-                                            ),
+                                           
                                             SizedBox(width: 20),
                                             CardTile(
                                               iconBgColor: Colors.pinkAccent,
-                                              cardTitle: 'Website Visits',
+                                              cardTitle: 'page Visits',
                                               icon: Icons.show_chart,
                                               subText:
                                                   'Tracked from Google Analytics',
@@ -94,7 +88,7 @@ class MainPage extends StatelessWidget {
                                             SizedBox(width: 20),
                                             CardTile(
                                               iconBgColor: Colors.green,
-                                              cardTitle: 'Revenue',
+                                              cardTitle: 'pay',
                                               icon: Icons.home,
                                               subText: 'Last 24 Hours',
                                               mainText: '2500',
