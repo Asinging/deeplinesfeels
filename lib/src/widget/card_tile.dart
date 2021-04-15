@@ -8,9 +8,13 @@ class CardTile extends StatelessWidget {
   final Color iconBgColor;
   final String mainText;
   final String subText;
+  final double width;
+  final double height;
 
   const CardTile(
       {Key key,
+      this.height,
+      this.width,
       this.cardTitle,
       this.icon,
       this.iconBgColor,
@@ -23,8 +27,11 @@ class CardTile extends StatelessWidget {
     final _media = MediaQuery.of(context).size;
     return FittedBox(
       child: Container(
-        height: _media.height / 6,
-        width: _media.width / 7,
+        // height: _media.height / 6,
+        // width: _media.width / 7,
+         height: height,
+                width: width,
+        
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: <Widget>[
@@ -36,6 +43,7 @@ class CardTile extends StatelessWidget {
               child: Container(
                 height: _media.height / 6.5,
                 width: _media.width / 7,
+               
                 padding: EdgeInsets.only(left: 10, right: 10, top: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,

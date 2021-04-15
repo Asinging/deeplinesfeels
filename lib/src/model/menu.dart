@@ -9,7 +9,7 @@ class Menu {
 
 List<Menu> menuItems = [
   Menu(title: 'Dashboard', icon: Icons.dashboard),
-  Menu(title: 'Notifications', icon: Icons.notification_important),
-  Menu(title: 'Web UI', icon: Icons.web),
-  Menu(title: 'Charts', icon: Icons.insert_chart),
+  Menu(title: 'Analytics', icon: Icons.notification_important),
+  // Menu(title: 'Web UI', icon: Icons.web),
+  // Menu(title: 'Charts', icon: Icons.insert_chart),
 ];

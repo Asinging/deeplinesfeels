@@ -47,61 +47,158 @@ class MainPage extends StatelessWidget {
                       SizedBox(
                         height: 100,
                         width: _media.width,
-                        child: AppBar(
+                        child: Center(child:Row(children: <Widget>[Expanded(child:  AppBar(
+                         
                           elevation: 10,
                           centerTitle: true,
                           title: Text(
-                            'Deeplines Feels',
+                            "DeepLineFeels",
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           backgroundColor: drawerBgColor,
-                        ),
+                        ),)],)
+                       )
                       ),
+                      SizedBox(height:50),
                       Expanded(
                         child: ListView(
-                          padding: EdgeInsets.only(
-                              top: 20, left: 20, right: 20, bottom: 20),
+                          // padding: EdgeInsets.only(
+                          //     top: 20, left: 20, right: 20, bottom: 20),
                           children: <Widget>[
                             IntrinsicHeight(
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   Column(
                                     children: <Widget>[
                                       IntrinsicHeight(
                                         child: Row(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.start,
+                                              MainAxisAlignment.center,
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.stretch,
+                                              CrossAxisAlignment.center,
                                           children: <Widget>[
-                                           
-                                            SizedBox(width: 20),
-                                            CardTile(
-                                              iconBgColor: Colors.pinkAccent,
-                                              cardTitle: 'page Visits',
-                                              icon: Icons.show_chart,
-                                              subText:
-                                                  'Tracked from Google Analytics',
-                                              mainText: '3.560',
+
+                            SizedBox(width: 20),
+
+                             ChartCardTile(
+                                                  cardColor: Color(0xFF7560ED),
+                                                  cardTitle: 'Page Visit',
+                                                  subText: 'April 2021',
+                                                  icon: Icons.track_changes,
+                                                  typeText: '3,9989',
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                ChartCardTile(
+                                                  cardColor: Color(0xFF25C6DA),
+                                                  cardTitle: 'Comments',
+                                                  subText: 'April 2012',
+                                                  icon: Icons.add_comment_sharp,
+                                                  typeText: '500',
+                                                ),
+                                              SizedBox(
+                                                  width: 20,
+                                                ),
+                                                ChartCardTile(
+                                                  cardColor: Color(0xFF25deDA),
+                                                  cardTitle: 'Wallet',
+                                                  subText: 'April 2021',
+                                                  icon: Icons.money_off_csred_rounded,
+                                                  typeText: '35487',
+                                                ),
+                                            // CardTile(
+                                            //   // the mediaquery hieght and size is divided by the height and width
+                                            //   // provided for  cardTile respectively
+                                             
+                                            //   iconBgColor: Colors.pinkAccent,
+                                            //   cardTitle: 'page Visits',
+                                            //   icon: Icons.show_chart,
+                                            //   subText:
+                                            //       'Tracked from Google Analytics',
+                                            //   mainText: '3.560',
+                                            // ),
+                                            // SizedBox(width: 20),
+                                            // CardTile(
+                                            //   iconBgColor: Colors.green,
+                                            //   cardTitle: 'pay',
+                                            //   icon: Icons.home,
+                                            //   subText: 'Last 24 Hours',
+                                            //   mainText: '2500',
+                                            // ),
+                                            // SizedBox(width: 20),
+                                            // CardTile(
+                                            //   iconBgColor:
+                                            //       Colors.lightBlueAccent,
+                                            //   cardTitle: 'Followors',
+                                            //   icon: Icons.unfold_less,
+                                            //   subText: 'Last 24 Hours',
+                                            //   mainText: '112',
+                                            // ),
+                                            ],),
+                                         
+                                      ),
+                                      SizedBox(
+                                        height: 50,
+                                      ),
+                                      IntrinsicHeight(
+                                        child: Column(
+                                          mainAxisAlignment:MainAxisAlignment.center,
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          children: <Widget>[
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: <Widget>[
+                                                Row(
+                                                  mainAxisAlignment:MainAxisAlignment.center,
+                                                  children:<Widget>[ 
+                                                   ChartCardTile(
+                                                  cardColor: Color(0xFF8560AD),
+                                                  cardTitle: 'Mp4 Download',
+                                                  subText: 'April 2021',
+                                                  icon: Icons.download_outlined,
+                                                  typeText: '1,002',
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                ChartCardTile(
+                                                  cardColor: Color(0xFF25A6DA),
+                                                  cardTitle: 'mp3 Download',
+                                                  subText: 'April 2021',
+                                                  icon: Icons.download_outlined,
+                                                  typeText: '35487',
+                                                ),
+                                              SizedBox(
+                                                  width: 20,
+                                                ),
+                                                ChartCardTile(
+                                                  cardColor: Color(0xFF25C6DA),
+                                                  cardTitle: 'Download count',
+                                                  subText: 'March 2017',
+                                                  icon: Icons.download_outlined,
+                                                  typeText: '35487',
+                                                ),]),
+                                              
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                
+                                              ],
                                             ),
-                                            SizedBox(width: 20),
-                                            CardTile(
-                                              iconBgColor: Colors.green,
-                                              cardTitle: 'pay',
-                                              icon: Icons.home,
-                                              subText: 'Last 24 Hours',
-                                              mainText: '2500',
+                                            SizedBox(
+                                              width: 30,
                                             ),
-                                            SizedBox(width: 20),
-                                            CardTile(
-                                              iconBgColor:
-                                                  Colors.lightBlueAccent,
-                                              cardTitle: 'Followors',
-                                              icon: Icons.unfold_less,
-                                              subText: 'Last 24 Hours',
-                                              mainText: '112',
-                                            ),
+                                            // ProjectWidget(media: _media),
                                           ],
                                         ),
                                       ),
@@ -109,49 +206,17 @@ class MainPage extends StatelessWidget {
                                         height: 20,
                                       ),
                                       IntrinsicHeight(
-                                        child: Row(
-                                          children: <Widget>[
-                                            Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: <Widget>[
-                                                ChartCardTile(
-                                                  cardColor: Color(0xFF7560ED),
-                                                  cardTitle: 'Bandwidth usage',
-                                                  subText: 'March 2017',
-                                                  icon: Icons.pie_chart,
-                                                  typeText: '50 GB',
-                                                ),
-                                                SizedBox(
-                                                  height: 20,
-                                                ),
-                                                ChartCardTile(
-                                                  cardColor: Color(0xFF25C6DA),
-                                                  cardTitle: 'Download count',
-                                                  subText: 'March 2017',
-                                                  icon: Icons.cloud_upload,
-                                                  typeText: '35487',
-                                                ),
-                                              ],
-                                            ),
-                                            SizedBox(
-                                              width: 20,
-                                            ),
-                                            ProjectWidget(media: _media),
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                      ),
+                                        child:Column(children: <Widget>[
+                                          Row(children:[Container(width:200,height:100,child:Column(children:<Widget>[
+                                            Icon(Icons.cloud_upload, size: 50, color: Colors.blue),
+                                         Text("Upload", style:TextStyle(fontSize: 20, color: Colors.black, fontStyle: FontStyle.italic) )]) )])],)
+                                      )
                                     ],
                                   ),
                                   SizedBox(
                                     width: 10,
                                   ),
-                                  QuickContact(media: _media)
+                                  // QuickContact(media: _media)
                                 ],
                               ),
                             ),
@@ -160,11 +225,11 @@ class MainPage extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: <Widget>[
-                                  CommentWidget(media: _media),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  ProfileWidget(media: _media),
+                                  // CommentWidget(media: _media),
+                                  // SizedBox(
+                                  //   width: 20,
+                                  // ),
+                                  // ProfileWidget(media: _media),
                                 ],
                               ),
                             ),

@@ -12,4 +12,4 @@ TextStyle cardTileMainText =
     TextStyle(color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold);
 TextStyle cardTitleTextStyle = TextStyle(fontSize: 18, color: Colors.black87);
 Color selectedColor = Color(0xFF4AC8EA);
-Color drawerBgColor = Color(0xFF272D34);
+Color drawerBgColor = Color(0xFF01579B);

@@ -12,7 +12,7 @@ class _SideBarMenuState extends State<SideBarMenu>
     with SingleTickerProviderStateMixin {
   double maxWidth = 250;
   double minWidgth = 70;
-  bool collapsed = false;
+  bool collapsed =true;
   int selectedIndex = 0;
 
   AnimationController _animationController;
@@ -36,24 +36,86 @@ class _SideBarMenuState extends State<SideBarMenu>
         return Container(
           decoration: BoxDecoration(
             boxShadow: [
-              BoxShadow(blurRadius: 10, color: Colors.black26, spreadRadius: 2)
+              BoxShadow(blurRadius: 10, color: Colors.teal, spreadRadius: 2)
             ],
             color: drawerBgColor,
           ),
           width: _animation.value,
-          child:  Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                // padding:const EdgeInsets.only(20.0)
+                children: <Widget>[
+                  collapsed
+                      ?Container(
+                          padding: const EdgeInsets.all(22),
+                          child: Text(
+                            "DeepLineFeels",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ))
+                      : Container(),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  Container(
+                    child: InkWell(
+                onTap: () {
+                   
+                 
+                  setState(() {
+                    collapsed = !collapsed;
+
+                    collapsed
+                        ? _animationController.reverse()
+                        : _animationController.forward();
+                    // print("${collapsed}");
+                  });
+                },
+                child: AnimatedIcon(
+                  icon: AnimatedIcons.close_menu,
+                  progress: _animationController,
+                  color: Colors.white,
+                  size: 30,
+                ),
+              ),
+              
+
+                  ),
+
+                  SizedBox(
+                    height: 100,
+                  )
+                ],
+              ),
+
+              // the avater container
+              const Divider(
+            height: 10,
+            thickness: 1,
+            indent: 0,
+            // endIndent: 23,
+            color:Colors.grey
+          ),
               Container(
-                height: 200,
+                
+                height: 80,
                 decoration: BoxDecoration(
-                    color: Colors.grey.shade300,
-                    image: DecorationImage(
-                      image: NetworkImage(
-                          'https://backgrounddownload.com/wp-content/uploads/2018/09/google-material-design-background-6.jpg'),
-                      fit: BoxFit.cover,
-                    )),
+                    color: drawerBgColor,
+                    // image: DecorationImage(
+                    //   image: NetworkImage(
+                    //     // "jhjkl"
+                    //       'https://backgrounddownload.com/wp-content/uploads/2018/09/google-material-design-background-6.jpg'
+                    //       ),
+                    //   fit: BoxFit.cover,
+                    // )
+                    ),
                 child: Container(
                   padding: EdgeInsets.all(10),
                   height: 100,
@@ -65,51 +127,35 @@ class _SideBarMenuState extends State<SideBarMenu>
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
-                          CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI4JuatGP6M5_Q0wYSkx2jAVzJff1FBaPYXV7zFbMngh5RV6J7'),
-                            backgroundColor: Colors.white,
-                            radius: _animation.value >= 250 ? 30 : 20,
-                          ),
+                          // CircleAvatar(
+                          //   backgroundImage: NetworkImage(
+                          //       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI4JuatGP6M5_Q0wYSkx2jAVzJff1FBaPYXV7zFbMngh5RV6J7'),
+                          //       //  backgroundImage: NetworkImage(
+                          //       // 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI4JuatGP6M5_Q0wYSkx2jAVzJff1FBaPYXV7zFbMngh5RV6J7'),
+                          //   backgroundColor: Colors.white,
+                          //   radius: _animation.value >= 250 ? 30 : 20,
+                          // ), 
+                          Container(
+                            padding: const EdgeInsets.only(top:3,),
+                            child:Row(children:[ Icon(Icons.perm_identity_rounded, size: 50, color: Colors.white),
                           SizedBox(
                             width: _animation.value >= 250 ? 20 : 0,
                           ),
                           (_animation.value >= 250)
                               ? Text('Yasin ilhan',
                                   style: menuListTileDefaultText)
-                              : Container(),
+                              : Container(),])
+                            
+                          )
                         ],
                       ),
-                      SizedBox(
-                        height: _animation.value >= 250 ? 20 : 0,
-                      ),
-                      Spacer(),
-                      (_animation.value >= 250)
-                          ? Text(
-                              'Yasin ilhan',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            )
-                          : Container(),
-                      (_animation.value >= 250)
-                          ? Text(
-                              'yasinilhan61@gmail.com',
-                              style: TextStyle(
-                                fontSize: 13,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            )
-                          : Container(),
+                    
                     ],
                   ),
                 ),
               ),
               SizedBox(
-                height: 80,
+                height: 20,
               ),
               Expanded(
                 child: ListView.separated(
@@ -134,25 +180,7 @@ class _SideBarMenuState extends State<SideBarMenu>
                   },
                 ),
               ),
-              InkWell(
-                onTap: () {
-                  setState(() {
-                    collapsed = !collapsed;
-                    collapsed
-                        ? _animationController.reverse()
-                        : _animationController.forward();
-                  });
-                },
-                child: AnimatedIcon(
-                  icon: AnimatedIcons.close_menu,
-                  progress: _animationController,
-                  color: Colors.white,
-                  size: 40,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              )
+             
             ],
           ),
         );
